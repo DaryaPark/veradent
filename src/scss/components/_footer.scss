@@ -1,0 +1,266 @@
+.footer-grid {
+  @include grid-container();
+
+  gap: 10px 32px;
+
+  &__item {
+    align-self: center;
+
+    @include mobile {
+      margin: 0 auto;
+    }
+    // лицензия
+    &:first-child {
+      grid-row: 1/span 4;
+      grid-column: 4 span;
+      align-self: start;
+
+      @include tablet {
+        grid-column: 3 span;
+        grid-row: 1/span 4;
+      }
+
+
+      @include mobile {
+        grid-column: 4 span;
+        grid-row:9;
+      }
+    }
+
+    // Лого
+    &:nth-child(2) {
+      grid-row: 1/ span 2;
+      grid-column: 5/span 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include tablet {
+        grid-row: 8/span 2;
+        grid-column:  6 span;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+        grid-row: 6;
+      }
+
+    }
+
+    // Копирайт лого
+    &:nth-child(3) {
+      grid-row: 3;
+      grid-column: 5/span 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include tablet {
+        grid-row: 10;
+        grid-column: 6 span;
+      }
+
+      @include mobile {
+        grid-row: 7;
+        grid-column: 4 span;
+      }
+    }
+
+    // Телефон
+    &:nth-child(4) {
+      grid-column: 10/ span 3;
+      grid-row: 1;
+      margin-left:auto ;
+
+      @include tablet {
+        grid-column: 3 span;
+        grid-row: 1;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+        margin: 0 auto;
+      }
+    }
+
+    // Соц сети
+    &:nth-child(5) {
+      grid-row: 3/span 2;
+      grid-column: 11/ span 2;
+
+
+      @include tablet {
+        grid-column: 3 span;
+        grid-row: 3/span 2;
+      }
+
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+
+    // Оферта
+    &:nth-child(6) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column:12 span;
+      grid-row: 6;
+
+
+      @include tablet {
+        grid-column: 6 span;
+        grid-row: 11;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+        grid-row: 11;
+      }
+
+    }
+
+  }
+}
+
+.footer-wrapper {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: #DAECFA;
+}
+
+.footer-contact-link {
+  justify-content: end;
+  background-color: transparent;
+  padding:  0;
+
+}
+
+.footer-contact-links {
+justify-content: end;
+}
+
+
+  .footer-text {
+    font: var(--text-regular);
+    display: flex;
+    margin-top: auto;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @include tablet {
+      max-width: 320px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .footer-text-current {
+    color: #63B4DB;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include small-tablet {
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+
+
+  .footer-copyright-offers {
+    font: var(--text-semibold);
+  }
+
+  .footer-copyright {
+    font-size: 9px;
+    line-height: 14px;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  .footer-contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+
+//   .footer-logo-wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   .footer-copyright {
+//     font: var(--text-regular);
+//     font-size: 12px;
+//   }
+
+//   .footer-copyright-offers {
+//     margin: 0 auto;
+//     font: var(--text-regular);
+//     font-size: 12px;
+//   }
+
+//   .footer-container-wrapper {
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 30px;
+//     justify-content: space-between;
+//   }
+
+// .footer-wrapper__container {
+//   padding-top:50px;
+//   padding-bottom: 20px;
+//   display: flex;
+//   flex-direction: column;
+
+// }
+
+// .footer-contact {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: end;
+//   font: var(--text-regular);
+
+//   &__item {
+//     &:not(:last-child) {
+//       margin-bottom: 15px;
+//     }
+
+//   }
+//   &__text {
+//     width: 420px;
+//     text-align: end;
+//   }
+
+//   &__link {
+//     background-color: transparent;
+//     padding: 7px 0;
+//   }
+// }
+
+
+.design {
+  display: flex;
+  padding: 10px;
+  font: var(--text-regular);
+  font-size: 9px;
+
+  a {
+    margin: 0 auto;
+    border-bottom: 1.5px solid #63B4DB;
+  }
+}

@@ -1,0 +1,232 @@
+.attention {
+  // восклицательный знак
+
+  &__img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    color: #EE2E2E;
+    font-size: 35px;
+    margin-right: 40px;
+    align-items: center;
+
+
+    &::before,
+    &::after {
+      @include for-content();
+      border: 1px solid transparent;
+      border-radius: 5px;
+    }
+
+    &::before {
+      z-index: -1;
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+      box-shadow:1px 4px 5px -1px rgba(55, 55, 55, 0.9);
+      width: 40px;
+      height: 40px;
+      @include small-tablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    &::after {
+      border-color: #EE2E2E;
+      background-color: #EE2E2E;
+      box-shadow:2px 11px 15px -1px rgba(55, 55, 55, 0.9);
+      width: 80px;
+      height: 80px;
+      z-index: -2;
+      border-radius: 25px;
+      transform: rotate(-17deg);
+
+      @include small-tablet {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+      }
+    }
+
+    @include small-tablet {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+      font-size: 24px;
+    }
+  }
+
+}
+
+.attention-content {
+width: fit-content;
+display: flex;
+align-items: center;
+position: relative;
+
+&::after {
+  @include for-content;
+  background-image: url(../img/wave.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 7px;
+  bottom: 0;
+  right: 187px;
+  background-position: right;
+  z-index: -1;
+
+  @include small-tablet {
+    display: none;
+  }
+}
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
+
+  }
+
+  &__text-wrapper {
+    margin-right: 100px;
+    @include for-desktop {
+      margin-right: 30px;
+    }
+
+    @include small-tablet {
+      margin-right: 0;
+    }
+  }
+
+  &__text {
+
+    max-width: 500px;
+    position: relative;
+    font: var(--text-regular);
+    background-color: #008FFF;
+    color: #FFFFFF;
+    z-index: 2;
+
+    &:first-child span::after {
+      width: 240px;
+    }
+
+    &:last-child span::after {
+      width: 221px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &-span {
+      position: relative;
+      color: #000000;
+      font-weight: 600;
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      top: 0;
+      box-shadow: 2px 4px 6px -1px  rgba(0, 0, 0, 0.9);
+      padding: 0 3px;
+    // &::after {
+    //   @include for-content();
+    //   background-color: #FFFFFF;
+    //   border-radius: 5px;
+    //   top: 0;
+    //   box-shadow: 2px 4px 6px -1px  rgba(0, 0, 0, 0.9);
+    //   left: 0;
+    //   bottom: 0;
+    //   inset: -2px;
+    //   width: 85px;
+    //   height: 25px;
+    //   z-index: -1;
+    // }
+
+    &:last-child {
+      margin-right: 5px;
+    }
+
+    @include small-tablet {
+      border-radius: 3px;
+    }
+  }
+
+  @include small-tablet {
+    max-width: 380px;
+    line-height: 26px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  }
+
+
+  .contact-links {
+    display: flex;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+
+
+  @include small-tablet {
+    margin-bottom: 24px;
+  }
+
+}
+
+.attention-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 144px;
+  // background: linear-gradient(to right,#008FFF 10%, #CCF2F6  90%);
+  background-color: #008FFF;
+  box-shadow: -3px 6px 21px -3px  rgba(0, 0, 0, 0.9);
+
+  @include for-desktop {
+    padding: 20px 60px;
+  }
+
+  @include small-tablet {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-links-2 {
+    display: none;
+
+    @include small-tablet {
+      display: flex;
+    }
+  }
+
+  .contact-links-item {
+
+    &:focus {
+      border-color: #FFFFFF;
+    }
+
+    &:hover {
+      color: #DAECFA;
+      transform: scale(1.01);
+    }
+
+    &:active {
+      color: #DAECFA;
+      transform: scale(0.9);
+      border-color: #DAECFA;
+    }
+  }
+}
+

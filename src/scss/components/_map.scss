@@ -1,0 +1,14 @@
+
+.map {
+  max-width: 1000px;
+  height: 640px;
+
+  @include mobile {
+    height: 400px;
+  }
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+

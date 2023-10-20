@@ -1,0 +1,58 @@
+
+.contact-links {
+  display: flex;
+}
+
+  .contact-links-item {
+    color: #FFFFFF;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    transition:
+    color .3s ease-in-out,
+    transform .3s ease-in-out,
+    border .3s ease-in-out,
+    background .3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include small-tablet {
+        margin-right: 15px;
+      }
+    }
+
+
+    &:hover {
+      color: #008FFF;
+      transform: scale(1.01);
+    }
+
+    &:active {
+      color: #008FFF;
+      transform: scale(0.9);
+      border-color: #008FFF;
+    }
+  }
+
+  .contact-links-icon {
+    width: 50px;
+    height: 50px;
+    fill: currentColor;
+
+    @include small-tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .contact-links-link {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    outline: 2px solid transparent;
+
+    transition: outline .3s ease-in-out;
+    &:focus-visible {
+      outline:2px solid #FFFFFF;
+    }
+  }

@@ -1,0 +1,280 @@
+.theme-btns {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.theme-btn {
+  position: absolute;
+  right: 0;
+  font: var(--text-regular);
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+
+
+  svg {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 3.3px;
+    z-index: 1;
+  }
+
+}
+
+.theme-btn-svg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-right: 5px;
+  width: 50px;
+  height: 22px;
+  border: 1px solid #1d4499c2;
+  box-shadow:1px 4px 5px -1px rgba(255, 255, 255, 0.74);
+  border-radius: 100px;
+
+  &::after {
+    @include for-content();
+
+    width: 21px;
+    height: 21px;
+    top: -0.5px;
+    border: 1px solid #008FFF;
+
+    border-radius:100px;
+  }
+}
+.white-theme-btn{
+  display: none;
+  opacity: 0;
+  right: -3px;
+  transition: opacity .3s ease-in-out,
+border .3s ease-in-out,
+color .3s ease-in-out,
+display .3s ease-in-out,
+transform .3s ease-in-out;
+  svg {
+    right: 2.3px;
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+  }
+
+  &.--active {
+    display: flex;
+    opacity: 2;
+    z-index: 1;
+  }
+
+  &:hover {
+  color: #008FFF;
+
+  span {
+    border-color:#008FFF ;
+  }
+}
+
+&:active {
+  transform: scale(0.99);
+}
+}
+
+.theme-btn-svg-white {
+  background: linear-gradient(to left, #7D98D2 20%,#1d4499c2 60%);
+  &::after {
+    right: 0;
+    background-color: #1d4499c2;
+  }
+}
+.black-theme-btn {
+display: flex;
+opacity: 1;
+color: #1d4499c2;
+transition:
+opacity .3s ease-in-out,
+border .3s ease-in-out,
+color .3s ease-in-out,
+display .3s ease-in-out,
+transform .3s ease-in-out;
+
+
+svg {
+  margin-right:auto;
+  stroke: currentColor;
+  fill: currentColor;
+  top: 2.3px;
+  left: 3px;
+}
+
+&:hover {
+  color: #008FFF;
+
+  span {
+    border-color:#008FFF ;
+  }
+}
+
+&:active {
+  transform: scale(0.99);
+}
+}
+
+.theme-btn-svg-black {
+  border-color: #1d4499c2;
+  background: linear-gradient(to right, #1d4499eb 20%,#cbd8f4 60%);
+
+  &::after {
+    border-color: #1d4499c2;
+    left: 0;
+    background-color: #FFFFFF;
+  }
+}
+.black-theme-btn.--disabled {
+  display: none;
+  opacity: -1;
+  z-index: -1;
+}
+
+.theme-btn-description {
+  @include mobile {
+    display: none;
+  }
+}
+
+.header.black{
+  background: linear-gradient(to right, #1D4599 50%, #7D98D2 50%);
+}
+
+body.black-theme {
+  background-color: #000000;
+  color: #c5c7cb;
+
+  // -----------------------
+  .header-item,
+  .phone-contact,
+  .footer-text-current,
+  .adventages-content-sta__title  {
+    color:#FFFFFF ;
+  }
+  // ---------------------
+.header-contact-phone {
+  &::before {
+    background-color:#008FFF ;
+  }
+}
+
+// .logo-container {
+//   color: #FFFFFF;
+// }
+.phone-contact {
+  &:hover {
+    color: #008FFF;
+    &::before {
+      background-color: #FFFFFF;
+    }
+
+    icon {
+      stroke:#008FFF ;
+    }
+  }
+
+  &:active {
+    &::before{
+      border-color: #008FFF;
+    }
+  }
+}
+// ---------------------------------
+.header-banner-wrapper__title::after,
+.adventages-content-sta::after {
+  filter: invert(1);
+}
+  // ---------------------
+  .sta-btn {
+  border-color: #1D4599;
+  background: linear-gradient(to right, #7D98D2 10%, #6fa0f4 90%);
+  color: #FFFFFF;
+}
+// ---------------------------------
+
+  // ------------------------------------
+  .price-table {
+    background-color: #000000ca;
+  }
+
+  .price-table__heading {
+    background-color: #587FD2;
+  }
+
+  // ------------------------------
+  .logo{
+    fill:#7D98D2;
+  }
+
+  .burger {
+    color: #FFFFFF;
+  }
+
+  .price-list{
+    background-color:#1D4599 ;
+  }
+
+  // ---------------------------------
+  .attention-container,
+  .attention-content__text {
+    background-color: #f56b30;
+  }
+
+  // ---------------------------------
+
+  .feedback__title {
+    color: #78675D;
+  }
+  .contacts__text {
+    color: #E1E3E7;
+  }
+
+
+  // --------------------------------
+  .swiper-button-disabled {
+    border-width: 2px;
+    background-color: #78675D;
+
+    &::after {
+      color: #FFFFFF;
+    }
+
+  }
+
+  .swiper-pagination-current {
+    color: #E1E3E7;
+  }
+
+  .swiper-pagination-total {
+    color:  #7D98D2;
+  }
+
+  // ---------------------------------
+  .footer-wrapper {
+    background-color: #1D4599;
+  }
+
+  // ----------------------------------
+  .graph-modal__container {
+    color: #78675D;
+    background-color: #E1E3E7;
+    border: 1px solid #FFFFFF;
+  }
+
+*:focus {
+  outline: 2px solid #FFFFFF;
+}
+}
+
+

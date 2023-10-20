@@ -1,0 +1,159 @@
+.price-list {
+  background-color: #F8F8FF;
+  margin-bottom: 130px;
+  padding: 130px 0;
+
+  @include tablet {
+    margin-bottom: 50px;
+    padding: 50px 0;
+  }
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+  }
+
+
+}
+
+// .price-caption {
+//   width: 100%;
+//   background-color: #DAECFA;
+
+//   &:first-child {
+//     border-radius: 20px 20px 0 0;
+//   }
+
+//   &__title {
+//     font: var(--text-semibold);
+//   }
+
+//   &__wrapper {
+//     display: flex;
+//     padding: 20px 150px;
+//     width: 100%;
+//     justify-content: space-between;
+//   }
+// }
+
+.price-table {
+  width: 100%;
+  position: relative;
+  font: var(--text-regular);
+  background-color: #FFFFFF;
+  border-radius: 20px 20px 0 0;
+
+  &__table {
+    width: 100%;
+    padding: 0 150px;
+
+
+    &:last-child {
+      padding: 0 150px 20px 150px;
+    }
+
+    @include tablet {
+      padding: 0 40px;
+
+
+    &:last-child {
+      padding: 0 40px 20px 40px;
+    }
+  }
+
+    @include small-tablet {
+      padding: 0 20px;
+
+
+    &:last-child {
+      padding: 0 20px 20px 20px;
+    }
+    }
+  }
+
+  &__heading {
+    background-color: #DAECFA;
+
+    &:first-child {
+      border-radius: 20px 20px 0 0;
+    }
+  }
+  &__heading-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 150px;
+
+    @include tablet {
+      padding: 20px 40px;
+    }
+
+    @include small-tablet {
+      padding: 10px 20px;
+    }
+  }
+
+  &__item{
+    padding: 20px 0;
+
+    &:nth-child(2n) {
+      text-align: end;
+      @include mobile {
+        width: 50%;
+      }
+    }
+
+    @include small-tablet {
+      padding: 10px 0;
+    }
+
+    &:not(:last-child) {
+      @include mobile {
+        margin-right: 10px;
+      }
+
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &:not(:last-child)::after {
+      @include for-content();
+      height: auto;
+      bottom: 0;
+      border-bottom: 1px solid #78675D;
+  }
+  }
+
+  &__title {
+    @include mobile {
+      font-size: 12px;
+    }
+
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      text-align: end;
+      @include mobile {
+        width: 67px;
+      }
+    }
+
+  }
+
+  @include small-tablet {
+    font-size: 12px;
+  }
+}

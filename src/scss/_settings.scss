@@ -1,0 +1,356 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+.page__body {
+  margin: 0;
+  min-width: 220px;
+  min-height: 100%;
+  font-size: 16px;
+  color: #78675D;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+  outline: none;
+}
+
+a:active, a:focus { outline: none; }
+
+input, textarea {outline:none;}
+input:active, textarea:active {outline:none;}
+:focus {outline:none;}
+textarea {resize:none;}
+textarea {resize:vertical;}
+textarea {resize:horizontal;}
+
+
+.site-container {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.is-hidden {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+
+  @include for-desktop {
+    padding: 0 35px;
+  }
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+
+  @include mobile {
+    padding: 0 12px;
+  }
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.phone-contact {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  border: 1px solid transparent;
+  z-index: 1;
+  color: #63B4DB;
+  transition:
+    color .3s ease-in-out,
+    border-color .3s ease-in-out,
+    background .3s ease-in-out,
+    opacity .3s ease-in-out;
+
+    &::before {
+      display: flex;
+      position: absolute;
+      content: "";
+      inset: -2px;
+      background-color: transparent;
+      border: 1.5px solid transparent;
+      border-radius: 10px;
+      opacity: 0;
+      z-index: -1;
+      transition:
+    color .3s ease-in-out,
+    border-color .3s ease-in-out,
+    background .3s ease-in-out,
+    opacity .3s ease-in-out;
+    }
+
+   svg {
+    stroke: currentColor;
+    z-index: 1;
+   }
+
+
+  &:hover {
+    color: #008FFF;
+  }
+
+  &:focus-visible {
+    border-color: #008FFF;
+    &::before {
+      border-color: #008FFF;
+    }
+  }
+
+  &:active {
+    color: #FFFFFF;
+
+    &::before {
+      background-color: #008FFF;
+      opacity: 1;
+    }
+  }
+}
+
+.mail-link {
+  transform: scale(1.0);
+  font-size: 16px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  z-index: 1;
+  color: #63B4DB;
+  transition:
+    transform .3s ease-in-out,
+    color .3s ease-in-out;
+
+  svg {
+    stroke: currentColor;
+  }
+
+
+  &:hover {
+    transform: scale(1.01);
+    color: #008FFF;
+  }
+
+  &:focus-visible {
+    border-color: #008FFF;
+  }
+  &:active {
+    transform: scale(1.0);
+    background-color:#008FFF;
+    border-color: #63B4DB;
+    color: #FFFFFF;
+  }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.page--ios .dis-scroll {
+  position: relative;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke-width: 2px;
+  stroke: #8CCBFD;
+  margin-right: 2px;
+}
+
+.sta-btn {
+  transform: scale(1);
+  position: relative;
+  text-align: center;
+  width: 160px;
+  height: 160px;
+
+  font: var(--text-semibold);
+
+  text-align: center;
+  cursor: pointer;
+  border-radius: 115px;
+  border: 15px solid #F8F8FF;
+  color: #78675D;
+  box-shadow: 3px 0px 42px transparent;
+  background: linear-gradient(to right, #CCF2F6 10%, #CBDCF9 90%);
+  z-index: 2;
+  transition:
+   background .3s ease-in-out,
+   box-shadow .3s ease-in-out,
+   color .3s ease-in-out,
+   border .3s ease-in-out,
+   transform .3s ease-in-out;
+
+  &:focus {
+    box-shadow:3px 0px 42px #63B4DB;
+    color:#008FFF;
+  }
+  &:hover {
+    background: linear-gradient(to bottom, #CCF2F6 10%, #CBDCF9 90%);
+    // border-color: #DAECFA;
+    box-shadow:3px 0px 42px #63B4DB;
+    color:#008FFF;
+  }
+
+  &:active {
+    transform: scale(1.01);
+    border-color:#ffffffc4;
+    background: linear-gradient(to right, #CCF2F6 10%, #CBDCF9 90%);
+    box-shadow:3px 0px 42px #FFFFFF;
+  }
+
+  @include small-tablet {
+    width: 140px;
+    height: 140px;
+    font-size: 14px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-family: "Raleway";
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+
+.semibold-title {
+  font: var(--text-semibold);
+}
+
+.link {
+border-bottom: 1px solid transparent;
+transition: color .3s ease-in-out, border-color .3s ease-in-out;
+  &:hover {
+    color: #008FFF;
+    border-color: #008FFF;
+
+
+@include tablet {
+  border-color: transparent;
+}
+  }
+
+}
+
+
+.title,
+.contacts__title,
+.contacts__text,
+.footer-text,
+.footer-copyright,
+.attention-content__text,
+.price-table__title,
+.price-table__item,
+.adventages-content-sta__text
+{
+  outline: 2px solid transparent;
+  transition: outline .3s ease-in-out;
+&:focus {
+  outline-color:#008FFF;
+}
+}
+
+.attention-content__text:focus {
+  outline-color:#FFFFFF ;
+}

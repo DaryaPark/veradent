@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      @include('partials/recomentadion.html')
+      <section class="price-list">
+        @include('partials/adventages.html')
+        @include('partials/price.html')
+        @include('partials/attential.html')
+      </section>
+      @include('partials/licenses.html')
+      @include('partials/feedback.html')
+      <div id="contacts" class="navigation container">
+        @include('partials/adress.html')
+        @include('partials/map.html')
+      </div>
+    </main>
+    @include('partials/footer.html')
+
+        <!-- Модальное окно -->
+        <div class="graph-modal">
+          @include('partials/licenses-modal.html')
+          @include('partials/sta-modal.html')
+        </div>
+
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+</body>
+
+</html>

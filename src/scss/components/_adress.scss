@@ -1,0 +1,232 @@
+.navigation {
+@include grid-container();
+
+  &__item {
+
+    &:first-child {
+      grid-column: 5 span;
+
+      @include tablet {
+      grid-column: 6 span;
+    }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+    &:last-child {
+      grid-column: 7 span;
+
+      @include tablet {
+      grid-column: 6 span;
+    }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+  }
+}
+
+.adress {
+  &__title {
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+  }
+}
+  .contacts {
+    @include grid-container();
+
+
+    gap: 20px;
+
+    @include tablet {
+      gap: 16px 32px;
+    }
+
+    &__item{
+      grid-column: 12 span;
+
+       .contacts__title {
+          margin-bottom: 10px;
+        }
+
+        @include tablet {
+          grid-column: 3 span;
+
+          &:nth-child(2) {
+            grid-row: 2;
+          }
+        }
+
+        @include small-tablet {
+          grid-column: 6 span;
+        }
+
+        @include mobile {
+          grid-column: 4 span;
+        }
+      }
+
+    &__text {
+      font: var(--text-regular);
+      color: #78675D;
+      padding: 0;
+
+      &:hover{
+        .icon {
+        color: #008FFF;
+        }
+      }
+      &:active {
+        .icon {
+          color: #FFFFFF;
+        }
+      }
+
+      .icon {
+        color: #63B4DB;
+
+        transition: color .3s ease-in-out;
+      }
+      span {
+        font: var(--text-semibold);
+      }
+
+    }
+
+
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    &__wrapper-1 {
+      align-items: center;
+      margin-bottom: 0;
+
+      &::before {
+        @include for-content;
+
+        position: relative;
+        display: flex;
+        width: 40px;
+        height: 40px;
+        background-image:url(../img/metro-icon.png) ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 15px;
+      }
+    }
+
+    &__btn {
+      position: relative;
+      color: #63B4DB;
+      font: var(--text-semibold);
+      padding: 10px 0;
+      align-items: center;
+      border-radius: 10px;
+      border-top:1px solid transparent ;
+      border-bottom: 1px solid transparent;
+      transition: color .3s ease-in-out,
+       background .3s ease-in-out,
+       border .3s ease-in-out;
+
+      &:focus-visible {
+        background-color: #63b5db8e;
+        color: #FFFFFF;
+      }
+      &:hover {
+        color: #008FFF;
+      }
+
+      &:active {
+        border-radius: 0;
+        border-color:#008FFF ;
+      }
+    }
+
+    &__btn._active {
+      border-radius: 0;
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+
+
+    &__btn-svg {
+      width: 10px;
+      height: 10px;
+      align-items: center;
+      fill: currentColor;
+      transition: transform .3s ease-in-out;
+
+    }
+
+  }
+
+.contacts-show-more {
+  display: none;
+  max-width: 600px;
+  padding: 20px 0;
+  flex-direction: column;
+  visibility: hidden;
+  transition: visibility .3s ease-in-out, display .3s ease-in-out;
+
+
+ &__title {
+  display: flex;
+  align-items: center;
+  font: var(--text-semibold);
+  margin-bottom: 10px;
+  position: relative;
+  svg {
+    margin-right: 5px;
+  }
+ }
+
+ &__text{
+  font: var(--text-regular);
+  margin-bottom: 5px;
+
+ }
+
+ &__map-link {
+    color: #63B4DB;
+    text-decoration: underline;;
+    // background-color: transparent;
+    // border-top:1px solid transparent ;
+    // // border-bottom: 1px solid #63B4DB;
+    transition: color .3s ease-in-out,
+     background .3s ease-in-out,
+     transform .3s ease-in-out;
+
+     &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    &:focus-visible {
+      background-color: #63b5db8e;
+      color: #FFFFFF;
+    }
+    &:hover {
+      color: #008FFF;
+    }
+
+    &:active {
+      transform: scale(1.01);
+
+    }
+ }
+}
+
+.contacts-show-more._active {
+  display: flex;
+  visibility: visible;
+}

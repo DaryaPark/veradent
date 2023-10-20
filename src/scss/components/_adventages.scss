@@ -1,0 +1,296 @@
+.adventages {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 160px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 57px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+  }
+
+}
+.adventages-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &::after {
+  @include for-content ();
+
+  position: absolute;
+  top: 50px;
+  // width:calc(100% - 1400px / 2);
+  width: 700px;
+  background-image: url(../img/teeth.png);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  @include for-desktop {
+    width: 574px;
+  }
+
+  @include tablet {
+    background-image: url(../img/advantages-1.png);
+    width: 222px;
+    height: 179px;
+    right: 110px;
+
+  }
+
+  @include small-tablet {
+    filter: opacity(0.5);
+    right: 0;
+    width: 200px;
+    height: 110px;
+  }
+  }
+
+  &__text {
+    position: relative;
+    max-width: 268px;
+    text-align: center;
+    font: var(--text-semibold);
+    z-index: 1;
+
+    @include desktop {
+
+      &::after {
+        @include for-content();
+
+        bottom: -47px;
+        width: 48px;
+        height: 48px;
+        bottom: -60px;
+        background: linear-gradient(to bottom, #DAECFA, #1C00ff00);
+        border-radius: 115px;
+    }
+
+
+    &:first-child::after {
+    right: 0;
+    }
+
+    &:last-child::after {
+    left: 0;
+    }
+  }
+
+    @include tablet {
+      &::after {
+        display: none;
+      }
+      &::before {
+        @include for-content();
+        position: relative;
+        display: flex;
+        width: 24px;
+        height: 24px;
+        top: 0;
+        bottom: 0;
+        margin-right: 10px;
+        background: linear-gradient(to bottom, #DAECFA, #1C00ff00);
+        border-radius: 115px;
+    }
+    }
+
+
+    &-1 {
+      max-width: 354px;
+
+      &::after {
+        margin: 0 auto;
+      }
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: 30px;
+      height: 100%;
+    }
+
+    @include small-tablet {
+      font-weight: 400;
+      margin-bottom: 10px;
+      font-size: 12px;
+
+
+      &::before {
+        height: 10px;
+        width: 10px;
+        margin-right: 5px;
+      }
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 32px;
+    z-index: 1;
+    transition: width .3s ease-in-out;
+
+    &:first-child {
+      justify-content: center;
+
+      @include tablet {
+        justify-content: start;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 100px;
+      width: 915px;
+
+      @include for-desktop {
+        width: 865px;
+      }
+
+      @include tablet {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      width: 1127px;
+
+      @include for-desktop {
+        width: 900px;
+      }
+
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      width: 100%;
+      flex-direction: column;
+      justify-content:start;
+      margin: 0;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    margin-bottom: 184px;
+    z-index: 1;
+
+    @include tablet {
+      margin-bottom: 71px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+
+.adventages-content-sta {
+  width: 100%;
+  position: relative;
+  padding-bottom: 104px;
+
+  @include small-tablet {
+    padding-bottom: 0;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @include small-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 750px;
+
+    @include for-desktop {
+      max-width: 600px;
+    }
+
+    @include tablet {
+      max-width: 550px;
+    }
+
+    @include small-tablet {
+    max-width: 100%;
+    margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    color: #4B85E9;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    max-width: 600px;
+    font: var(--text-semibold);
+
+    @include for-desktop {
+      max-width: 478px;
+    }
+
+    @include small-tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    right: 93px;
+    bottom: 24px;
+    z-index: 2;
+
+    @include tablet {
+      right: 0;
+    }
+
+    @include small-tablet {
+      bottom: 0;
+    }
+  }
+
+  &::after {
+    @include for-content ();
+
+    position: absolute;
+    background-image: url(../img/vector2.png);
+    top: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include small-tablet {
+      background-position: bottom;
+      top: -40px;
+    }
+  }
+}
+

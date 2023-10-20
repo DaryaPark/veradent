@@ -1,0 +1,49 @@
+.recomendation {
+  @include grid-container();
+
+
+  margin-bottom: 79px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  @include small-tablet {
+    gap: 16px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__item {
+    grid-column: 3 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
+
+    &:first-child {
+      @include tablet {
+        grid-column: 6 span;
+      }
+
+      @include mobile {
+        grid-column: 4 span;
+      }
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+
+  }
+}
+
+.recomendation-text {
+  font: var(--text-regular);
+}
